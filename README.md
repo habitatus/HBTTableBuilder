@@ -6,6 +6,6 @@ Check out included TableBuilderExample project to learn how to use this class.
 
 
 Requirements
-============
+------------
 
 HBTTableBuilder uses ARC.
