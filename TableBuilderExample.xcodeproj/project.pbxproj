@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9DE69EA16F738850003DB9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DE69E916F738850003DB9E /* UIKit.framework */; };
+		C9DE69EC16F738850003DB9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DE69EB16F738850003DB9E /* Foundation.framework */; };
+		C9DE69EE16F738850003DB9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DE69ED16F738850003DB9E /* CoreGraphics.framework */; };
+		C9DE69F416F738850003DB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9DE69F216F738850003DB9E /* InfoPlist.strings */; };
+		C9DE69F616F738850003DB9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE69F516F738850003DB9E /* main.m */; };
+		C9DE69FA16F738850003DB9E /* HBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE69F916F738850003DB9E /* HBTAppDelegate.m */; };
+		C9DE69FC16F738850003DB9E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE69FB16F738850003DB9E /* Default.png */; };
+		C9DE69FE16F738850003DB9E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE69FD16F738850003DB9E /* Default@2x.png */; };
+		C9DE6A0016F738850003DB9E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DE69FF16F738850003DB9E /* Default-568h@2x.png */; };
+		C9DE6A0316F738850003DB9E /* HBTMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE6A0216F738850003DB9E /* HBTMasterViewController.m */; };
+		C9DE6A0616F738850003DB9E /* HBTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE6A0516F738850003DB9E /* HBTDetailViewController.m */; };
+		C9DE6A0916F738850003DB9E /* HBTMasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DE6A0716F738850003DB9E /* HBTMasterViewController_iPhone.xib */; };
+		C9DE6A0C16F738850003DB9E /* HBTMasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DE6A0A16F738850003DB9E /* HBTMasterViewController_iPad.xib */; };
+		C9DE6A0F16F738850003DB9E /* HBTDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DE6A0D16F738850003DB9E /* HBTDetailViewController_iPhone.xib */; };
+		C9DE6A1216F738850003DB9E /* HBTDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DE6A1016F738850003DB9E /* HBTDetailViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C9DE69E616F738850003DB9E /* TableBuilderExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableBuilderExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9DE69E916F738850003DB9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C9DE69EB16F738850003DB9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9DE69ED16F738850003DB9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C9DE69F116F738850003DB9E /* TableBuilderExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableBuilderExample-Info.plist"; sourceTree = "<group>"; };
+		C9DE69F316F738850003DB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9DE69F516F738850003DB9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9DE69F716F738850003DB9E /* TableBuilderExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableBuilderExample-Prefix.pch"; sourceTree = "<group>"; };
+		C9DE69F816F738850003DB9E /* HBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTAppDelegate.h; sourceTree = "<group>"; };
+		C9DE69F916F738850003DB9E /* HBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTAppDelegate.m; sourceTree = "<group>"; };
+		C9DE69FB16F738850003DB9E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C9DE69FD16F738850003DB9E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C9DE69FF16F738850003DB9E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C9DE6A0116F738850003DB9E /* HBTMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTMasterViewController.h; sourceTree = "<group>"; };
+		C9DE6A0216F738850003DB9E /* HBTMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTMasterViewController.m; sourceTree = "<group>"; };
+		C9DE6A0416F738850003DB9E /* HBTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTDetailViewController.h; sourceTree = "<group>"; };
+		C9DE6A0516F738850003DB9E /* HBTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTDetailViewController.m; sourceTree = "<group>"; };
+		C9DE6A0816F738850003DB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HBTMasterViewController_iPhone.xib; sourceTree = "<group>"; };
+		C9DE6A0B16F738850003DB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HBTMasterViewController_iPad.xib; sourceTree = "<group>"; };
+		C9DE6A0E16F738850003DB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HBTDetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		C9DE6A1116F738850003DB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HBTDetailViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9DE69E316F738840003DB9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9DE69EA16F738850003DB9E /* UIKit.framework in Frameworks */,
+				C9DE69EC16F738850003DB9E /* Foundation.framework in Frameworks */,
+				C9DE69EE16F738850003DB9E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9DE69DD16F738840003DB9E = {
+			isa = PBXGroup;
+			children = (
+				C9DE69EF16F738850003DB9E /* TableBuilderExample */,
+				C9DE69E816F738850003DB9E /* Frameworks */,
+				C9DE69E716F738850003DB9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9DE69E716F738850003DB9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9DE69E616F738850003DB9E /* TableBuilderExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9DE69E816F738850003DB9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9DE69E916F738850003DB9E /* UIKit.framework */,
+				C9DE69EB16F738850003DB9E /* Foundation.framework */,
+				C9DE69ED16F738850003DB9E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9DE69EF16F738850003DB9E /* TableBuilderExample */ = {
+			isa = PBXGroup;
+			children = (
+				C9DE69F816F738850003DB9E /* HBTAppDelegate.h */,
+				C9DE69F916F738850003DB9E /* HBTAppDelegate.m */,
+				C9DE6A0116F738850003DB9E /* HBTMasterViewController.h */,
+				C9DE6A0216F738850003DB9E /* HBTMasterViewController.m */,
+				C9DE6A0416F738850003DB9E /* HBTDetailViewController.h */,
+				C9DE6A0516F738850003DB9E /* HBTDetailViewController.m */,
+				C9DE6A0716F738850003DB9E /* HBTMasterViewController_iPhone.xib */,
+				C9DE6A0A16F738850003DB9E /* HBTMasterViewController_iPad.xib */,
+				C9DE6A0D16F738850003DB9E /* HBTDetailViewController_iPhone.xib */,
+				C9DE6A1016F738850003DB9E /* HBTDetailViewController_iPad.xib */,
+				C9DE69F016F738850003DB9E /* Supporting Files */,
+			);
+			path = TableBuilderExample;
+			sourceTree = "<group>";
+		};
+		C9DE69F016F738850003DB9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9DE69F116F738850003DB9E /* TableBuilderExample-Info.plist */,
+				C9DE69F216F738850003DB9E /* InfoPlist.strings */,
+				C9DE69F516F738850003DB9E /* main.m */,
+				C9DE69F716F738850003DB9E /* TableBuilderExample-Prefix.pch */,
+				C9DE69FB16F738850003DB9E /* Default.png */,
+				C9DE69FD16F738850003DB9E /* Default@2x.png */,
+				C9DE69FF16F738850003DB9E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9DE69E516F738840003DB9E /* TableBuilderExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9DE6A1516F738850003DB9E /* Build configuration list for PBXNativeTarget "TableBuilderExample" */;
+			buildPhases = (
+				C9DE69E216F738840003DB9E /* Sources */,
+				C9DE69E316F738840003DB9E /* Frameworks */,
+				C9DE69E416F738840003DB9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TableBuilderExample;
+			productName = TableBuilderExample;
+			productReference = C9DE69E616F738850003DB9E /* TableBuilderExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9DE69DE16F738840003DB9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HBT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Habitatus;
+			};
+			buildConfigurationList = C9DE69E116F738840003DB9E /* Build configuration list for PBXProject "TableBuilderExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C9DE69DD16F738840003DB9E;
+			productRefGroup = C9DE69E716F738850003DB9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9DE69E516F738840003DB9E /* TableBuilderExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9DE69E416F738840003DB9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9DE69F416F738850003DB9E /* InfoPlist.strings in Resources */,
+				C9DE69FC16F738850003DB9E /* Default.png in Resources */,
+				C9DE69FE16F738850003DB9E /* Default@2x.png in Resources */,
+				C9DE6A0016F738850003DB9E /* Default-568h@2x.png in Resources */,
+				C9DE6A0916F738850003DB9E /* HBTMasterViewController_iPhone.xib in Resources */,
+				C9DE6A0C16F738850003DB9E /* HBTMasterViewController_iPad.xib in Resources */,
+				C9DE6A0F16F738850003DB9E /* HBTDetailViewController_iPhone.xib in Resources */,
+				C9DE6A1216F738850003DB9E /* HBTDetailViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9DE69E216F738840003DB9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9DE69F616F738850003DB9E /* main.m in Sources */,
+				C9DE69FA16F738850003DB9E /* HBTAppDelegate.m in Sources */,
+				C9DE6A0316F738850003DB9E /* HBTMasterViewController.m in Sources */,
+				C9DE6A0616F738850003DB9E /* HBTDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C9DE69F216F738850003DB9E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9DE69F316F738850003DB9E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C9DE6A0716F738850003DB9E /* HBTMasterViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9DE6A0816F738850003DB9E /* en */,
+			);
+			name = HBTMasterViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		C9DE6A0A16F738850003DB9E /* HBTMasterViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9DE6A0B16F738850003DB9E /* en */,
+			);
+			name = HBTMasterViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		C9DE6A0D16F738850003DB9E /* HBTDetailViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9DE6A0E16F738850003DB9E /* en */,
+			);
+			name = HBTDetailViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		C9DE6A1016F738850003DB9E /* HBTDetailViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9DE6A1116F738850003DB9E /* en */,
+			);
+			name = HBTDetailViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9DE6A1316F738850003DB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9DE6A1416F738850003DB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9DE6A1616F738850003DB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TableBuilderExample/TableBuilderExample-Prefix.pch";
+				INFOPLIST_FILE = "TableBuilderExample/TableBuilderExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C9DE6A1716F738850003DB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TableBuilderExample/TableBuilderExample-Prefix.pch";
+				INFOPLIST_FILE = "TableBuilderExample/TableBuilderExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9DE69E116F738840003DB9E /* Build configuration list for PBXProject "TableBuilderExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9DE6A1316F738850003DB9E /* Debug */,
+				C9DE6A1416F738850003DB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9DE6A1516F738850003DB9E /* Build configuration list for PBXNativeTarget "TableBuilderExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9DE6A1616F738850003DB9E /* Debug */,
+				C9DE6A1716F738850003DB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9DE69DE16F738840003DB9E /* Project object */;
+}
