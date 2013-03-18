@@ -7,12 +7,13 @@
 //
 
 #import "HBTMasterViewController.h"
+#import "HBTTableBuilder.h"
 
-#import "HBTDetailViewController.h"
+@interface HBTMasterViewController ()
+@property (nonatomic, strong) HBTTableBuilder *tableBuilder;
 
-@interface HBTMasterViewController () {
-    NSMutableArray *_objects;
-}
+- (void)setupTable;
+
 @end
 
 @implementation HBTMasterViewController
@@ -21,23 +22,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.title = NSLocalizedString(@"Master", @"Master");
-		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-		    self.clearsSelectionOnViewWillAppear = NO;
-		    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-		}
+		self.title = @"Example";
+		self.tableBuilder = [[HBTTableBuilder alloc] init];
     }
     return self;
 }
 							
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-	self.navigationItem.rightBarButtonItem = addButton;
+	[self setupTable];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,91 +39,124 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+- (void)setupTable {
+	
+	// Create a section and add rows to it
+	MDTableSection *section1 = [MDTableSection sectionWithTitle:@"Section 1"];
+	[section1 addRowWithTitle:@""
+				   setupBlock:^ UITableViewCell * (UITableViewCell *cell, NSIndexPath *indexPath) {
+					   cell.textLabel.text = @"Row 1";
+					   return cell;
+				   }
+				  actionBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+					  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Row 1"
+																	  message:@"You tapped on row 1"
+																	 delegate:self
+															cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+					  [alert show];
+				  }];
+	[section1 addRowWithTitle:@""
+				   setupBlock:^ UITableViewCell * (UITableViewCell *cell, NSIndexPath *indexPath) {
+					   cell.textLabel.text = @"Row 2";
+					   return cell;
+				   }
+				  actionBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+					  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Row 2"
+																	  message:@"You tapped on row 2"
+																	 delegate:self
+															cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+					  [alert show];
+				  }];
+
+	// Add section to the table view
+	[self.tableBuilder addSection:section1];
+
+	
+	
+	// Repeat for as many sections as you need
+	MDTableSection *section2 = [MDTableSection sectionWithTitle:@"Section 2"];
+	[section2 addRowWithTitle:@""
+				   setupBlock:^ UITableViewCell * (UITableViewCell *cell, NSIndexPath *indexPath) {
+					   cell.textLabel.text = @"Row 3";
+					   cell.detailTextLabel.text = @"Subtitle";
+					   return cell;
+				   }
+				  actionBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+					  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Row 3"
+																	  message:@"Subtitle"
+																	 delegate:self
+															cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+					  [alert show];
+				  }];
+	[section2 addRowWithTitle:@""
+				   setupBlock:^ UITableViewCell * (UITableViewCell *cell, NSIndexPath *indexPath) {
+					   cell.textLabel.text = @"Row 4";
+					   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+					   return cell;
+				   }
+				  actionBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+					  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Row 4"
+																	  message:@"You tapped on row 4"
+																	 delegate:self
+															cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+					  [alert show];
+				  }];
+	[section2 addRowWithTitle:@""
+				   setupBlock:^ UITableViewCell * (UITableViewCell *cell, NSIndexPath *indexPath) {
+					   cell.textLabel.text = @"Row 5";
+					   return cell;
+				   }
+				  actionBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+					  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Row 5"
+																	  message:@"You tapped on row 5"
+																	 delegate:self
+															cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+					  [alert show];
+				  }];
+
+
+	[self.tableBuilder addSection:section2];
 }
+
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return [self.tableBuilder.sections count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return _objects.count;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	MDTableSection *sectionObj = [self.tableBuilder.sections objectAtIndex:section];
+	return sectionObj.title;
 }
 
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	MDTableSection *sectionObj = [self.tableBuilder.sections objectAtIndex:section];
+    return [sectionObj.rows count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
 
-
-	NSDate *object = _objects[indexPath.row];
-	cell.textLabel.text = [object description];
+	cell = [self.tableBuilder configureCell:cell atIndexPath:indexPath];
+	
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	[self.tableBuilder runActionForCell:nil atIndexPath:indexPath];
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	return [self.tableBuilder canRunActionForRowAtIndexPath:indexPath];
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSDate *object = _objects[indexPath.row];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    if (!self.detailViewController) {
-	        self.detailViewController = [[HBTDetailViewController alloc] initWithNibName:@"HBTDetailViewController_iPhone" bundle:nil];
-	    }
-	    self.detailViewController.detailItem = object;
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
-    } else {
-        self.detailViewController.detailItem = object;
-    }
-}
 
 @end

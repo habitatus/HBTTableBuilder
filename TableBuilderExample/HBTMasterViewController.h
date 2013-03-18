@@ -12,6 +12,4 @@
 
 @interface HBTMasterViewController : UITableViewController
 
-@property (strong, nonatomic) HBTDetailViewController *detailViewController;
-
 @end

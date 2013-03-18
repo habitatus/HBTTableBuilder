@@ -10,33 +10,15 @@
 
 #import "HBTMasterViewController.h"
 
-#import "HBTDetailViewController.h"
-
 @implementation HBTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    HBTMasterViewController *masterViewController = [[HBTMasterViewController alloc] initWithNibName:@"HBTMasterViewController_iPhone" bundle:nil];
-	    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-	    self.window.rootViewController = self.navigationController;
-	} else {
-	    HBTMasterViewController *masterViewController = [[HBTMasterViewController alloc] initWithNibName:@"HBTMasterViewController_iPad" bundle:nil];
-	    UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-	    
-	    HBTDetailViewController *detailViewController = [[HBTDetailViewController alloc] initWithNibName:@"HBTDetailViewController_iPad" bundle:nil];
-	    UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-		
-		masterViewController.detailViewController = detailViewController;
-		
-	    self.splitViewController = [[UISplitViewController alloc] init];
-	    self.splitViewController.delegate = detailViewController;
-	    self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
-	    
-	    self.window.rootViewController = self.splitViewController;
-	}
+	HBTMasterViewController *masterViewController = [[HBTMasterViewController alloc] initWithNibName:@"HBTMasterViewController_iPhone" bundle:nil];
+	self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+	self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
